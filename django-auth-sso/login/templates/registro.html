@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <title>login</title>
+    </head>
+    <body>
+        <h1>Registro de usuarios</h1>
+        <form method="POST">
+            <input name="user_name" id="id_new_user" placeholder="Register a new user" />
+            {% csrf_token %}
+        </form>
+
+        ​<table id="id_list_user">
+            {% for user in users %}
+                 <tr><td>{{ forloop.counter }}: {{ user.name }}</td></tr>
+             {% endfor %}
+       ​</table>
+    </body>
+</html>

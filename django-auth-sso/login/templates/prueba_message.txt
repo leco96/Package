@@ -1,0 +1,13 @@
+{% load account %}{% user_display user as user_display %}{% load i18n %}{% autoescape off %}{% blocktrans with site_name=current_site.name site_domain=current_site.domain %}Hello from {{ site_name }}!
+
+ {{ user_display }} por favor confirma tu correo accediendo al link proporcionado, e ingresa el código que encontrarás más abajo.
+
+Código: {{key}}
+
+To confirm this is correct, go to {{ activate_url }}
+
+
+{% endblocktrans %}
+{% blocktrans with site_name=current_site.name site_domain=current_site.domain %}Thank you from {{ site_name }}!
+{{ site_domain }}{% endblocktrans %}
+{% endautoescape %}
